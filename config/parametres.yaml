@@ -1,0 +1,101 @@
+# =============================================================================
+# Paramètres de la mission d'audit LBC/FT — Banque Fictive de l'Union (BFU)
+# =============================================================================
+# Trois familles de paramètres :
+#   1. seuils_reglementaires : repris des textes de l'UMOA (source citée sur chaque ligne).
+#   2. listes_gafi           : déclarations publiques du GAFI (à mettre à jour après chaque plénière).
+#   3. hypotheses_audit      : jugement de l'auditeur ou procédure interne de la banque — À ADAPTER.
+# Toujours vérifier la version en vigueur des textes et les dispositions nationales
+# plus contraignantes avant d'utiliser ces valeurs sur des données réelles.
+# =============================================================================
+
+mission:
+  banque: "Banque Fictive de l'Union (BFU)"
+  periode_debut: "2025-07-01"
+  periode_fin: "2026-06-30"
+  date_arrete: "2026-06-30"        # date d'arrêté des données extraites
+  devise: "FCFA"
+
+donnees:
+  dossier: "data/synthetiques"
+  dossier_sorties: "outputs"
+
+generation:
+  graine: 2026                     # graine fixe : jeu de données reproductible
+  nb_clients: 1200
+  part_personnes_morales: 0.15
+
+pseudonymisation:
+  # Données 100 % fictives : désactivée pour garder la démonstration lisible.
+  # Sur des données réelles, mettre `active: true` (noms, téléphones et pièces
+  # sont remplacés par des empreintes SHA-256 salées) et fournir le sel via la
+  # variable d'environnement LBCFT_SEL (jamais dans le dépôt).
+  active: false
+
+seuils_reglementaires:
+  # Décision n°021 du 21/12/2023/CM/UMOA fixant les montants seuils pour la mise
+  # en œuvre de la loi uniforme LBC/FT/FP.
+  declaration_especes_centif: 15000000       # art. 72 LU : déclaration des transactions en espèces (unique ou liées)
+  especes_multiples_journalieres: 9000000    # art. 17 i) LU : identification, opérations multiples en espèces sur une journée
+  examen_particulier_complexe: 10000000      # art. 21 LU : opérations d'une complexité inhabituelle ou injustifiée
+  examen_particulier_especes: 50000000       # art. 21 LU : paiements en espèces ou au porteur
+  # Instruction BCEAO n°233/07/2024 du 16 juillet 2024.
+  paiement_dette_especes: 5000000            # au-delà, paiement d'une dette en espèces interdit
+  # Loi uniforme LBC/FT/FP (2023), art. 29 al. 3 : réévaluation du profil des PPE.
+  reevaluation_ppe_annees: 3
+
+listes_gafi:
+  # Déclarations publiques du GAFI du 19 juin 2026 (plénière des 17-19 juin 2026).
+  # Prochaine plénière annoncée : 26-30 octobre 2026. Source : https://www.fatf-gafi.org
+  date_reference: "2026-06-19"
+  appel_a_action: [KP, IR, MM]               # Corée du Nord, Iran, Myanmar
+  surveillance_renforcee: [AO, BO, BA, BG, CM, CI, CD, HT, IQ, KE, KW, LA, LB, MC, NP, PG, SS, SY, VE, VN, VG, YE]
+
+parametrage_banque:
+  # Paramétrage observé dans l'outil de surveillance de la BFU (banque fictive).
+  # Sert à simuler les alertes de la banque ; l'audit le compare aux exigences.
+  liste_pays_a_risque: [KP, IR, MM, SY, YE, SS, CD, CM, HT, KE, VE, VN, BG, MC, BF, NG, ZA, MZ, NA]
+  date_mise_a_jour_liste: "2024-07-15"
+  scenarios:
+    ESP-01: "Versement d'espèces unitaire >= 15 M FCFA"
+    PAY-01: "Transfert international avec un pays de la liste interne"
+    PRO-01: "Crédits du mois >= 10 x revenu déclaré (PP) ou 3 x CA mensuel (PM), et >= 50 M FCFA"
+    TRF-01: "Transfert international unitaire >= 50 M FCFA"
+  trf01_montant_min: 50000000
+  pro01_multiple_pp: 10
+  pro01_multiple_pm: 3
+  pro01_montant_min: 50000000
+
+hypotheses_audit:
+  fractionnement:                  # OPE-01
+    fenetre_jours: 7
+    nb_min_versements: 3
+    bande_basse: 0.7               # versements entre 70 % et 100 % du seuil de déclaration
+  compte_de_passage:               # OPE-02 (personnes physiques)
+    fenetre_jours: 3
+    credits_min_journaliers: 10000000
+    taux_sortie_min: 0.9
+    nb_episodes_min: 3
+  incoherence_profil:              # OPE-03
+    multiple_revenu_pp: 5
+    multiple_ca_mensuel_pm: 3
+    montant_min_mensuel: 5000000
+    nb_mois_min: 2
+  reactivation:                    # OPE-04
+    inactivite_min_jours: 365
+    fenetre_jours: 30
+    montant_min: 5000000
+  reseaux:                         # OPE-06
+    taille_min_groupe: 3
+  revue_kyc_annees:                # KYC-03 — procédure interne (hypothèse)
+    ELEVE: 1
+    MOYEN: 2
+    FAIBLE: 3
+  filtrage:                        # FIL-01
+    score_min: 0.88
+  alertes:                         # ALE-01 / ALE-02 — procédure interne (hypothèse)
+    delai_max_traitement_jours: 30
+    seuil_clotures_massives: 15    # clôtures par analyste et par jour
+  declarations_soupcon:            # ALE-03
+    delai_max_analyse_jours: 30    # procédure interne (hypothèse)
+    delai_max_transmission_jours: 2  # hypothèse : la loi exige une déclaration « immédiate » (art. 60 LU)

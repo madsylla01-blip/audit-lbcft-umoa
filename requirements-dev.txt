@@ -1,0 +1,4 @@
+# Outils de développement : tests et contrôle de style
+-r requirements.txt
+pytest>=8.0
+ruff>=0.5

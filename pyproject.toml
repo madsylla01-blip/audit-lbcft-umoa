@@ -1,0 +1,28 @@
+[project]
+name = "lbcft-audit"
+version = "1.0.0"
+description = "Audit du dispositif LBC/FT d'une banque de l'UMOA par l'analyse de données (données fictives)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mamad" }]
+dependencies = ["pandas>=2.2", "numpy>=1.26", "matplotlib>=3.8", "networkx>=3.2", "openpyxl>=3.1", "PyYAML>=6.0"]
+
+[project.optional-dependencies]
+tableau = ["streamlit>=1.36"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[tool.setuptools]
+packages = ["lbcft_audit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]  # longueur gérée par `ruff format` ; textes longs (références) conservés

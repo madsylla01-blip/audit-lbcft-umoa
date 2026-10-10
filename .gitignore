@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Environnements et secrets (le sel de pseudonymisation ne doit jamais être commité)
+.env
+*.secret
+
+# Systèmes et éditeurs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Fichiers temporaires d'Excel
+~$*.xlsx
+
+# Données réelles : ne jamais les déposer dans ce dépôt
+data/reelles/

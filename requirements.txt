@@ -1,0 +1,8 @@
+# Dépendances d'exécution (Python 3.10 ou plus récent)
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+networkx>=3.2
+openpyxl>=3.1
+PyYAML>=6.0
+streamlit>=1.36
