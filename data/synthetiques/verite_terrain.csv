@@ -1,0 +1,62 @@
+﻿id_client;typologie;detail
+CL00173;COMPTE_DE_PASSAGE;7 épisodes de transit rapide
+CL00236;COMPTE_DE_PASSAGE;6 épisodes de transit rapide
+CL00396;COMPTE_DE_PASSAGE;7 épisodes de transit rapide
+CL00561;COMPTE_DE_PASSAGE;5 épisodes de transit rapide
+CL00686;COMPTE_DE_PASSAGE;7 épisodes de transit rapide
+CL00691;COMPTE_DE_PASSAGE;5 épisodes de transit rapide
+CL01032;COMPTE_DE_PASSAGE;6 épisodes de transit rapide
+CL01150;COMPTE_DE_PASSAGE;6 épisodes de transit rapide
+CL00083;FAUX_POSITIF;Recettes de fin d'année cohérentes avec le chiffre d'affaires
+CL00121;FAUX_POSITIF;Membres d'un même foyer (justificatif de domicile)
+CL00122;FAUX_POSITIF;Indemnisation d'un sinistre : justificatif disponible
+CL00321;FAUX_POSITIF;Indemnité de départ à la retraite : justificatif disponible
+CL00513;FAUX_POSITIF;Produit de cession d'un terrain (acte notarié) : justificatif disponible
+CL00818;FAUX_POSITIF;Réactivation par un rappel de pension documenté
+CL01016;FAUX_POSITIF;Membres d'un même foyer (justificatif de domicile)
+CL01081;FAUX_POSITIF;Membres d'un même foyer (justificatif de domicile)
+CL00062;FRACTIONNEMENT;Versements espèces sous le seuil : 167,350,000 FCFA
+CL00095;FRACTIONNEMENT;Versements espèces sous le seuil : 141,050,000 FCFA
+CL00138;FRACTIONNEMENT;Versements espèces sous le seuil : 155,950,000 FCFA
+CL00222;FRACTIONNEMENT;Versements espèces sous le seuil : 178,050,000 FCFA
+CL00427;FRACTIONNEMENT;Versements espèces sous le seuil : 92,700,000 FCFA
+CL00555;FRACTIONNEMENT;Versements espèces sous le seuil : 115,800,000 FCFA
+CL00876;FRACTIONNEMENT;Versements espèces sous le seuil : 78,200,000 FCFA
+CL00894;FRACTIONNEMENT;Versements espèces sous le seuil : 180,950,000 FCFA
+CL00981;FRACTIONNEMENT;Versements espèces sous le seuil : 119,850,000 FCFA
+CL01073;FRACTIONNEMENT;Versements espèces sous le seuil : 140,000,000 FCFA
+CL00078;INCOHERENCE_PROFIL;Crédits sans rapport avec le revenu déclaré
+CL00229;INCOHERENCE_PROFIL;Crédits sans rapport avec le revenu déclaré
+CL00596;INCOHERENCE_PROFIL;Crédits sans rapport avec le revenu déclaré
+CL00631;INCOHERENCE_PROFIL;Crédits sans rapport avec le revenu déclaré
+CL00759;INCOHERENCE_PROFIL;Crédits sans rapport avec le revenu déclaré
+CL00979;INCOHERENCE_PROFIL;Crédits sans rapport avec le revenu déclaré
+CL01100;INCOHERENCE_PROFIL;Crédits sans rapport avec le revenu déclaré
+CL01102;INCOHERENCE_PROFIL;Crédits sans rapport avec le revenu déclaré
+CL00647;PAYS_A_RISQUE;Transferts avec LB
+CL00833;PAYS_A_RISQUE;Transferts avec MM
+CL00839;PAYS_A_RISQUE;Transferts avec SY
+CL00946;PAYS_A_RISQUE;Transferts avec AO
+CL00955;PAYS_A_RISQUE;Transferts avec IQ
+CL00970;PAYS_A_RISQUE;Transferts avec LB
+CL01010;PAYS_A_RISQUE;Transferts avec LB
+CL00028;REACTIVATION_DORMANT;Compte inactif réactivé : 17,700,000 FCFA
+CL00266;REACTIVATION_DORMANT;Compte inactif réactivé : 29,500,000 FCFA
+CL00405;REACTIVATION_DORMANT;Compte inactif réactivé : 27,500,000 FCFA
+CL00591;REACTIVATION_DORMANT;Compte inactif réactivé : 24,400,000 FCFA
+CL00845;REACTIVATION_DORMANT;Compte inactif réactivé : 26,800,000 FCFA
+CL01044;REACTIVATION_DORMANT;Compte inactif réactivé : 21,400,000 FCFA
+CL00367;RESEAU;reseau_2 : adresse partagé, fonds vers SAVANE EXPRESS SERVICES SARL
+CL00372;RESEAU;reseau_1 : telephone partagé, fonds vers ZENTRA GLOBAL SERVICES FZE
+CL00433;RESEAU;reseau_2 : adresse partagé, fonds vers SAVANE EXPRESS SERVICES SARL
+CL00600;RESEAU;reseau_1 : telephone partagé, fonds vers ZENTRA GLOBAL SERVICES FZE
+CL00820;RESEAU;reseau_2 : adresse partagé, fonds vers SAVANE EXPRESS SERVICES SARL
+CL01035;RESEAU;reseau_1 : telephone partagé, fonds vers ZENTRA GLOBAL SERVICES FZE
+CL01047;RESEAU;reseau_1 : telephone partagé, fonds vers ZENTRA GLOBAL SERVICES FZE
+CL01057;RESEAU;reseau_2 : adresse partagé, fonds vers SAVANE EXPRESS SERVICES SARL
+CL01185;RESEAU;reseau_1 : telephone partagé, fonds vers ZENTRA GLOBAL SERVICES FZE
+CL01198;RESEAU;reseau_2 : adresse partagé, fonds vers SAVANE EXPRESS SERVICES SARL
+CL00053;SANCTIONS_CORRESPONDANCE;FICT-015 : orthographe voisine
+CL00628;SANCTIONS_CORRESPONDANCE;FICT-016 : nom inversé, accent
+CL00805;SANCTIONS_CORRESPONDANCE;FICT-029 : même raison sociale, forme juridique ajoutée
+CL00924;SANCTIONS_HOMONYME;FICT-017 : même nom, autre date de naissance
